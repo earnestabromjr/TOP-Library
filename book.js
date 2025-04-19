@@ -29,6 +29,8 @@ function addBookToLibrary(title, author, pages, read = false, library = myLibrar
   library.push(book);
 }
 
+//TODO: Add a new book event handler to add a book to the library
+
 // Display library contents
 function displayLibrary(library = myLibrary) {
   libraryContainer.innerHTML = ""; // Clear previous contents
