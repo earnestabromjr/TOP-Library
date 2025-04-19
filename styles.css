@@ -1,0 +1,41 @@
+.libraryContainer {
+    resize: both;
+    overflow: auto;
+    display: grid;
+    gap: 4px;
+    padding: 4px;
+    border: 1px solid grey;
+    background-color: skyblue;
+    grid-template-columns: repeat(auto-, 1fr);
+}
+
+.libraryContainer > div {
+    width: auto;
+    background-color: #444;
+    text-align: center;
+    color: #ddd;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    padding: 12px;
+}
+
+.bookForm {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 8px;
+    padding: 8px;
+    border: 1px solid grey;
+    background-color: #f0f0f0;
+}
+body {
+    display: grid;
+};
+
+p {
+    margin: 12px auto 24px;
+}
+
+img {
+    height: 60px;
+}
