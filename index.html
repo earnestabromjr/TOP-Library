@@ -13,14 +13,17 @@
     <div class=bookForm>
         <h2>Add a Book</h2>
         <button id="addBookButton">Add</button>
-        <form id="bookFormID">
-            <label for="title">Title: </label><input type="text" id="title" placeholder="Title" required />
-            <label for="author">Author: </label><input type="text" id="author" placeholder="Author" required />
-            <label for="pages">Pages: </label><input type="number" id="pages" placeholder="Pages" required />
-            <label for="read">Read:</label>
-            <input type="checkbox" id="read" />
-            <button type="submit">Submit</button>
-        </form>
+        <aside class="formContainer">
+            <button id="closeFormButton">X</button>
+            <form id="bookFormID" style="display: none;">
+                <label for="title">Title: </label><input type="text" id="title" placeholder="Title" required />
+                <label for="author">Author: </label><input type="text" id="author" placeholder="Author" required />
+                <label for="pages">Pages: </label><input type="number" id="pages" placeholder="Pages" required />
+                <label for="read">Read:</label>
+                <input type="checkbox" id="read" />
+                <button type="submit" id="submitButton">Submit</button>
+            </form>
+        </aside>
     </div>
     <div class="libraryContainer">
     </div>

@@ -26,8 +26,8 @@
 
 .bookForm {
     display: block;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto auto;
+    grid-template-columns: repeat(auto-fit, 1fr);
+    grid-template-rows: auto-fit;
     gap: 8px;
     padding: 8px;
     border: 1px solid grey;

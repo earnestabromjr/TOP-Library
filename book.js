@@ -1,7 +1,12 @@
 const myLibrary = [];
 const libraryContainer = document.querySelector(".libraryContainer");
+const form = document.querySelector("#bookFormID");
 
-
+const buttons = {
+  addBook: document.querySelector("#addBookButton"),
+  closeForm: document.querySelector("#closeFormButton"),
+  submitForm: document.querySelector("#submitFormButton"),
+};
 // Book Constructor function
 function Book(title, author, pages, read) {
   if (!new.target) {
@@ -29,7 +34,15 @@ function addBookToLibrary(title, author, pages, read = false, library = myLibrar
   library.push(book);
 }
 
-//TODO: Add a new book event handler to add a book to the library
+// Add a new book event handler to add a book to the library
+buttons.addBook.addEventListener("click", (event) => {
+  form.style.display = "block";
+});
+
+// Close form event handler
+buttons.closeForm.addEventListener("click", (event) => {
+  form.style.display = "none";
+});
 
 // Display library contents
 function displayLibrary(library = myLibrary) {
