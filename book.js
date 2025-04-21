@@ -111,5 +111,3 @@ const book2 = new Book("To Kill a Mockingbird", "Harper Lee", 281, false);
 myLibrary.push(book1, book2);
 displayLibrary(myLibrary);
 
-console.log(Object.getPrototypeOf(Book.prototype) === Object.prototype); //
-console.log(book1.valueOf());
