@@ -7,27 +7,26 @@ const buttons = {
   closeForm: document.querySelector("#closeFormButton"),
   submitForm: document.querySelector("#submitButton"),
 };
-// Book Constructor function
-function Book(title, author, pages, read) {
-  if (!new.target) {
-    throw new Event("Book must be called with new");
-  }
-  this.read = read || false;
-  this.id = crypto.randomUUID();
+// Book class
+class Book {
+  constructor(title, author, pages, read = false) {
+    this.read = read;
+    this.id = crypto.randomUUID();
 
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.info = function() {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+  }
+
+  info() {
     return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read ? "read" : "not read yet"
       }`;
-  };
-}
+  }
 
-// Add function to toggle read status
-Book.prototype.toggleRead = function() {
-  this.read = !this.read;
-};
+  toggleRead() {
+    this.read = !this.read;
+  }
+}
 
 function addBookToLibrary(title, author, pages, read = false, library = myLibrary) {
   const book = new Book(title, author, pages, read);
