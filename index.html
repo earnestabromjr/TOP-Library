@@ -2,39 +2,37 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <div class="wrapper">
-    <div class="header">
-        <h1>Library</h1>
-    </div>
-    <div class="container">
+  <div class="header">
+    <h1>Library</h1>
+  </div>
+  <div class="container">
 
-        <body>
-            <div class="libraryContainer">
-            </div>
-            <div class=bookForm>
-                <h2>Add a Book</h2>
-                <button id="addBookButton">Add</button>
-                <aside class="formContainer">
-                    <button id="closeFormButton">Close</button>
-                    <form id="bookFormID" style="display: none;">
-                        <label for="title">Title: </label><input type="text" id="title" placeholder="Title" required />
-                        <label for="author">Author: </label><input type="text" id="author" placeholder="Author"
-                            required />
-                        <label for="pages">Pages: </label><input type="number" id="pages" placeholder="Pages"
-                            required />
-                        <input type="checkbox" id="read" />
-                        <label for="read">Read:</label>
-                        <button type="submit" id="submitButton">Submit</button>
-                    </form>
-                </aside>
-            </div>
-        </body>
-    </div>
+    <body>
+      <div class="libraryContainer">
+      </div>
+      <div class=bookForm>
+        <h2>Add a Book</h2>
+        <button id="addBookButton">Add</button>
+        <aside class="formContainer">
+          <button id="closeFormButton">Close</button>
+          <form id="bookFormID" style="display: none;">
+            <label for="title">Title: </label><input type="text" id="title" placeholder="Title" required />
+            <label for="author">Author: </label><input type="text" id="author" placeholder="Author" required />
+            <label for="pages">Pages: </label><input type="number" id="pages" placeholder="Pages" required />
+            <input type="checkbox" id="read" />
+            <label for="read">Read:</label>
+            <button type="submit" id="submitButton">Submit</button>
+          </form>
+        </aside>
+      </div>
+    </body>
+  </div>
 </div>
 <script defer src="./book.js"></script>
 

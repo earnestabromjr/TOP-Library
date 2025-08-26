@@ -1,0 +1,28 @@
+{
+	"name": "top-library",
+	"version": "1.0.0",
+	"description": "",
+	"main": "book.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "live-server --port=5500",
+		"lint": "eslint --fix ."
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/earnestabromjr/TOP-Library.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"type": "commonjs",
+	"bugs": {
+		"url": "https://github.com/earnestabromjr/TOP-Library/issues"
+	},
+	"homepage": "https://github.com/earnestabromjr/TOP-Library#readme",
+	"devDependencies": {
+		"@eslint/eslintrc": "^3.3.1",
+		"eslint": "^9.34.0",
+		"live-server": "^1.2.2"
+	}
+}
