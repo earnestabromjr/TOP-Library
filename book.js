@@ -1,3 +1,5 @@
+import "./validate.js";
+
 const myLibrary = [];
 const libraryContainer = document.querySelector(".libraryContainer");
 const form = document.querySelector("#bookFormID");
@@ -19,8 +21,9 @@ class Book {
   }
 
   info() {
-    return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read ? "read" : "not read yet"
-      }`;
+    return `${this.title} by ${this.author}, ${this.pages} pages, ${
+      this.read ? "read" : "not read yet"
+    }`;
   }
 
   toggleRead() {
@@ -28,7 +31,13 @@ class Book {
   }
 }
 
-function addBookToLibrary(title, author, pages, read = false, library = myLibrary) {
+function addBookToLibrary(
+  title,
+  author,
+  pages,
+  read = false,
+  library = myLibrary,
+) {
   const book = new Book(title, author, pages, read);
   for (const existingBook of library) {
     if (existingBook.id === book.id) {
@@ -69,17 +78,17 @@ buttons.submitForm.addEventListener("click", (event) => {
 // Display library contents
 function displayLibrary(library = myLibrary) {
   libraryContainer.innerHTML = ""; // Clear previous contents
-  library.forEach(book => {
+  library.forEach((book) => {
     const bookElement = document.createElement("div");
     const removeButton = document.createElement("button");
     removeButton.className = "removeButton";
     removeButton.type = "button"; // Ensure it's a button type
-    const readStatusBox = document.createElement("input")
+    const readStatusBox = document.createElement("input");
     readStatusBox.type = "checkbox";
     readStatusBox.addEventListener("change", () => {
       book.toggleRead();
       displayLibrary(); // Refresh the library display
-    })
+    });
     bookElement.className = "book";
     bookElement.id = book.id; // Set the ID for easy removal later
     removeButton.textContent = "Remove";
@@ -95,7 +104,7 @@ function displayLibrary(library = myLibrary) {
 }
 
 function removeBookFromLibrary(bookId, library = myLibrary) {
-  const index = library.findIndex(book => book.id === bookId);
+  const index = library.findIndex((book) => book.id === bookId);
   if (index !== -1) {
     library.splice(index, 1);
   } else {
@@ -103,10 +112,8 @@ function removeBookFromLibrary(bookId, library = myLibrary) {
   }
 }
 
-
 // Creating a new Book instance
 const book1 = new Book("1984", "George Orwell", 328, true);
 const book2 = new Book("To Kill a Mockingbird", "Harper Lee", 281, false);
 myLibrary.push(book1, book2);
 displayLibrary(myLibrary);
-
