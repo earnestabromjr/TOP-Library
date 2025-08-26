@@ -1,5 +1,3 @@
-import "./validate.js";
-
 const myLibrary = [];
 const libraryContainer = document.querySelector(".libraryContainer");
 const form = document.querySelector("#bookFormID");
@@ -116,6 +114,64 @@ function removeBookFromLibrary(bookId, library = myLibrary) {
     console.error("Book not found in the library.");
   }
 }
+
+function validateInput(input) {
+  if (input.validity.valueMissing) {
+    return "This field is required.";
+  }
+  if (input.validity.typeMismatch) {
+    return "Please enter a valid value.";
+  }
+  if (input.validity.patternMismatch) {
+    return "The value does not match the required pattern.";
+  }
+  if (input.validity.tooShort) {
+    return `The value is too short. Minimum length is ${input.minLength}.`;
+  }
+  if (input.validity.tooLong) {
+    return `The value is too long. Maximum length is ${input.maxLength}.`;
+  }
+  if (input.validity.rangeUnderflow) {
+    return `The value is too low. Minimum value is ${input.min}.`;
+  }
+  if (input.validity.rangeOverflow) {
+    return `The value is too high. Maximum value is ${input.max}.`;
+  }
+  if (input.validity.stepMismatch) {
+    return "The value is not in the correct step.";
+  }
+  return "";
+}
+
+formElements.title.addEventListener("input", (event) => {
+  event.target.setCustomValidity(""); // Clear previous custom validity message
+  if (!event.target.checkValidity()) {
+    // Set input to error state
+    formElements.title.classList.toggle("error", true);
+    // If the input is invalid, set a custom validity message
+    event.target.setCustomValidity(validateInput(event.target));
+  }
+});
+
+formElements.author.addEventListener("input", (event) => {
+  event.target.setCustomValidity(""); // Clear previous custom validity message
+  if (!event.target.checkValidity()) {
+    // Set input to error state
+    formElements.author.classList.toggle("error", true);
+    // If the input is invalid, set a custom validity message
+    event.target.setCustomValidity(validateInput(event.target));
+  }
+});
+
+formElements.pages.addEventListener("input", (event) => {
+  event.target.setCustomValidity(""); // Clear previous custom validity message
+  if (!event.target.checkValidity()) {
+    // Set input to error state
+    formElements.pages.classList.toggle("error", true);
+    // If the input is invalid, set a custom validity message
+    event.target.setCustomValidity(validateInput(event.target));
+  }
+});
 
 // Creating a new Book instance
 const book1 = new Book("1984", "George Orwell", 328, true);
