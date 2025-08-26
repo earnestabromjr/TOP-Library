@@ -3,6 +3,11 @@ import "./validate.js";
 const myLibrary = [];
 const libraryContainer = document.querySelector(".libraryContainer");
 const form = document.querySelector("#bookFormID");
+const formElements = {
+  title: document.querySelector("#title"),
+  author: document.querySelector("#author"),
+  pages: document.querySelector("#pages"),
+};
 
 const buttons = {
   addBook: document.querySelector("#addBookButton"),
